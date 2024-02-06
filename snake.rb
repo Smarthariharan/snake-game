@@ -1,6 +1,6 @@
 require 'ruby2d'
 
-set background: 'navy'
+set background: 'gray'
 set fps_cap: 15
 #width = 640 / 20 = 32
 #height = 480 / 20 = 24
@@ -19,7 +19,7 @@ class Snake
 
    def draw
      @positions.each do |position|
-        Square.new(x: position[0] * GRID_SIZE, y: position[1] * GRID_SIZE, size: GRID_SIZE - 1, color: 'white')
+        Square.new(x: position[0] * GRID_SIZE, y: position[1] * GRID_SIZE, size: GRID_SIZE - 1, color: 'orange')
      end
    end
 
@@ -97,7 +97,7 @@ class Game
         unless finished?
            Square.new(x: @ball_x * GRID_SIZE, y: @ball_y * GRID_SIZE, size: GRID_SIZE , color: 'yellow')
         end
-           Text.new(text_message, color: "green", x:10, y:10, size:25)
+           Text.new(text_message, color: "black", x:10, y:10, size:25)
 
       end
 
@@ -121,7 +121,7 @@ class Game
 
       def text_message
         if finished?
-            "Game over!, your score is #{@score}. Press key 'R' to restart."
+            "Game Over !, your score is #{@score}. Press key 'R' to restart."
         else
             "Score: #{@score}"
         end
